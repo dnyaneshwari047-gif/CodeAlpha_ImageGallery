@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeAlpha Image Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>CodeAlpha Image Gallery</h1>
+
+  <!-- Category Filter Buttons -->
+  <div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">All</button>
+  </div>
+
+  <div class="gallery-container">
+    <div class="gallery">
+      <img src="image/img1.JPG" alt="Nature 1" class="gallery-item" data-category="nature">
+      <img src="image/img2.JPG" alt="Nature 2" class="gallery-item" data-category="nature">
+      <img src="image/img3.JPG" alt="Nature 3" class="gallery-item" data-category="nature">
+      <img src="image/img4.JPG" alt="Nature 4" class="gallery-item" data-category="nature">
+      <img src="image/img5.JPG" alt="Nature 5" class="gallery-item" data-category="nature">
+      <img src="image/img6.JPG" alt="Nature 6" class="gallery-item" data-category="nature">
+      <img src="image/img7.JPG" alt="Nature 7" class="gallery-item" data-category="nature">
+      <img src="image/img8.JPG" alt="Nature 8" class="gallery-item" data-category="nature">
+      <img src="image/img9.JPG" alt="Nature 9" class="gallery-item" data-category="nature">
+      <img src="image/img10.JPG" alt="Nature 10" class="gallery-item" data-category="nature">
+      <img src="image/img11.JPG" alt="Nature 11" class="gallery-item" data-category="nature">
+
+
+    </div>
+
+    <!-- Navigation buttons -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
