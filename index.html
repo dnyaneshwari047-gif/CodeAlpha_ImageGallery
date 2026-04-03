@@ -2,47 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CodeAlpha Image Gallery</title>
+  <title>Advanced Image Gallery</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>CodeAlpha Image Gallery</h1>
+<h1>Image Gallery</h1>
 
-  <!-- Category Filter Buttons -->
-  <div class="filter-buttons">
-    <button class="filter-btn active" data-filter="all">All</button>
-  </div>
+<!-- Filter Buttons -->
+<div class="filter-buttons">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="nature">Nature</button>
+  <button class="filter-btn" data-filter="animals">Animals</button>
+  <button class="filter-btn" data-filter="cars">Cars</button>
+</div>
 
-  <div class="gallery-container">
-    <div class="gallery">
-      <img src="Image/img1.jpg" alt="Nature 1" class="gallery-item" data-category="nature">
-      <img src="Image/img2.jpg" alt="Nature 2" class="gallery-item" data-category="nature">
-      <img src="Image/img3.jpg" alt="Nature 3" class="gallery-item" data-category="nature">
-      <img src="Image/img4.jpg" alt="Nature 4" class="gallery-item" data-category="nature">
-      <img src="Image/img5.jpg" alt="Nature 5" class="gallery-item" data-category="nature">
-      <img src="Image/img6.jpg" alt="Nature 6" class="gallery-item" data-category="nature">
-      <img src="Image/img7.jpg" alt="Nature 7" class="gallery-item" data-category="nature">
-      <img src="Image/img8.jpg" alt="Nature 8" class="gallery-item" data-category="nature">
-      <img src="Image/img9.jpg" alt="Nature 9" class="gallery-item" data-category="nature">
-      <img src="Image/img10.jpg" alt="Nature 10" class="gallery-item" data-category="nature">
-      <img src="Image/img11.jpg" alt="Nature 11" class="gallery-item" data-category="nature">
+<!-- Gallery -->
+<div class="gallery">
+  <img src="Image/img1.jpg" class="gallery-item" data-category="nature">
+  <img src="Image/img2.jpg" class="gallery-item" data-category="animals">
+  <img src="Image/img3.jpg" class="gallery-item" data-category="cars">
+  <img src="Image/img4.jpg" class="gallery-item" data-category="nature">
+  <img src="Image/img5.jpg" class="gallery-item" data-category="animals">
+  <img src="Image/img6.jpg" class="gallery-item" data-category="cars">
+</div>
 
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <span class="close">&times;</span>
+  <img id="lightbox-img">
 
-    </div>
+  <!-- Navigation -->
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
+</div>
 
-    <!-- Navigation buttons -->
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
-  </div>
-
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img">
-  </div>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

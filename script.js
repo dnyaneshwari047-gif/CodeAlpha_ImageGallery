@@ -1,57 +1,59 @@
-const galleryItems = document.querySelectorAll('.gallery-item');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const closeBtn = document.querySelector('.close');
-const filterButtons = document.querySelectorAll('.filter-btn');
+const items = document.querySelectorAll(".gallery-item");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+const closeBtn = document.querySelector(".close");
 
 let currentIndex = 0;
+let visibleItems = [...items];
 
 // Open lightbox
-galleryItems.forEach((item, index) => {
-  item.addEventListener('click', () => {
-    lightbox.style.display = 'flex';
+items.forEach((item, index) => {
+  item.addEventListener("click", () => {
+    lightbox.style.display = "block";
     lightboxImg.src = item.src;
-    currentIndex = index;
+    currentIndex = visibleItems.indexOf(item);
   });
 });
 
-// Close lightbox
-closeBtn.addEventListener('click', () => {
-  lightbox.style.display = 'none';
-});
+// Close
+closeBtn.onclick = () => lightbox.style.display = "none";
 
-// Navigate images
-document.querySelector('.next').addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % galleryItems.length;
-  lightboxImg.src = galleryItems[currentIndex].src;
-});
+// Next
+nextBtn.onclick = () => {
+  currentIndex = (currentIndex + 1) % visibleItems.length;
+  lightboxImg.src = visibleItems[currentIndex].src;
+};
 
-document.querySelector('.prev').addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-  lightboxImg.src = galleryItems[currentIndex].src;
-});
+// Previous
+prevBtn.onclick = () => {
+  currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+  lightboxImg.src = visibleItems[currentIndex].src;
+};
 
-// Close lightbox when clicking outside image
-lightbox.addEventListener('click', (e) => {
-  if (e.target === lightbox) lightbox.style.display = 'none';
-});
+// Filter
+const buttons = document.querySelectorAll(".filter-btn");
 
-// Filter functionality
-filterButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    // Remove active class from all buttons
-    filterButtons.forEach(btn => btn.classList.remove('active'));
-    // Add active class to clicked button
-    button.classList.add('active');
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => {
 
-    const filter = button.getAttribute('data-filter');
+    buttons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
 
-    galleryItems.forEach(item => {
-      if (filter === 'all' || item.getAttribute('data-category') === filter) {
-        item.style.display = 'block';
+    const filter = btn.getAttribute("data-filter");
+
+    visibleItems = [];
+
+    items.forEach(item => {
+      if (filter === "all" || item.dataset.category === filter) {
+        item.style.display = "block";
+        visibleItems.push(item);
       } else {
-        item.style.display = 'none';
+        item.style.display = "none";
       }
     });
+
   });
 });
