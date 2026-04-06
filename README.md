@@ -38,9 +38,7 @@ CodeAlpha_ImageGallery/
     └── img11.JPG
 
 ## Live Demo
-
-https://dnyaneshwari047-gif.github.io/
-# CodeAlpha Image Gallery
+(https://dnyaneshwari047-gif.github.io/CodeAlpha_ImageGallery/)# CodeAlpha Image Gallery
 
 This project is a responsive Image Gallery built using HTML, CSS, and JavaScript as part of the CodeAlpha Frontend Development Internship.
 
@@ -79,8 +77,5 @@ CodeAlpha_ImageGallery/
     ├── img10.JPG
     └── img11.JPG
 
-## Live Demo
-
-https://dnyaneshwari047-gif.github.io/
 ## Author 
 Dnyaneshwari Lokare
